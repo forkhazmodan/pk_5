@@ -10,14 +10,18 @@ import java.nio.file.StandardCopyOption;
 
 public class Main {
     public static void main(String[] args) {
-        copyFiles("files_from","files_to");
-        copyFileContent("files_to/task2_file1.txt", "files_from/task2_file1.txt", "files_from/task2_file2.docx");
+
+        // TASK1
+        task1CopyFiles("files_from","files_to");
+
+        // TASK2
+        task2CopyFileContent("files_to/task2_file1.txt", "files_from/task2_file1.txt", "files_from/task2_file2.docx");
     }
 
     /**
      * Copy files with allowed extensions
      */
-    public static void copyFiles(String sourceFolder, String targetFolder){
+    public static void task1CopyFiles(String sourceFolder, String targetFolder){
 
         try {
             FileFilter fF = new FileFilter("doc", "pdf");
@@ -38,7 +42,7 @@ public class Main {
     /**
      * Copy files with allowed extensions
      */
-    public static void copyFileContent(String toFile, String...fromFiles){
+    public static void task2CopyFileContent(String toFile, String...fromFiles){
 
         File file = new File(toFile);
 
